@@ -1,0 +1,133 @@
+//colors
+
+$Dark-Blue: hsl(240, 38%, 20%);
+$Grayish-Blue: hsl(240, 18%, 77%);
+
+//reset
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 32px;
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: "Inter";
+}
+
+main {
+  background-image: url("./imgs/pattern-curve.svg");
+  background-position: left bottom;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+article {
+  display: none;
+}
+
+.img {
+  position: relative;
+  background-image: url("./imgs/pattern-bg.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  & img {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.switch-btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 50px;
+  display: flex;
+  border: none;
+  border-radius: 30px;
+  padding: 0.25rem;
+  background-color: white;
+  gap: 1rem;
+  color: $Grayish-Blue;
+  box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.247);
+  & * {
+    cursor: pointer;
+  }
+}
+
+.text {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  background-image: url("./imgs/pattern-quotes.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 10%;
+  background-size: 20%;
+  text-align: center;
+  font-size: 0.5rem;
+  color: $Dark-Blue;
+  line-height: 1.6;
+
+  & p:last-child {
+    font-weight: bold;
+  }
+  & span {
+    font-weight: lighter;
+    color: $Grayish-Blue;
+    display: block;
+  }
+}
+
+.current {
+  display: block;
+}
+
+//media
+
+@media screen and (min-width: 800px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    width: 70%;
+    max-width: 1000px;
+    height: auto;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.13);
+    background-size: 50%;
+  }
+  .text {
+    background-position: 50% 30%;
+    text-align: left;
+    & span {
+      display: inline-block;
+    }
+
+    & p:first-child {
+      font-size: 0.6rem;
+    }
+  }
+  .current {
+    display: flex;
+    flex-direction: row-reverse;
+    & > * {
+      flex: 1;
+    }
+  }
+}
